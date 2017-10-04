@@ -1,0 +1,63 @@
+﻿onLoadName = "GameMaster for 417.RCT Eden";
+author = Arcanum;
+onLoadMission = "";
+overviewText = "Enjoy your on spot made mission scenario";
+overviewTextLocked = "Locked! Contact admin for information.";
+enableDebugConsole = 1;
+
+respawn = 2;
+respawnDelay = 20;
+respawnVehicleDelay = 30;
+respawnTemplates[] = {"MenuPosition","MenuInventory","Tickets","Spectator"};
+respawnTemplatesVirtual[] = {};
+
+disabledAI = 1;
+joinUnassigned = 1;
+aiKills  = 0;
+
+class Header
+{
+	gameType = ZGM;
+	minPlayers = 1;
+	maxPlayers = 448;
+};
+
+class Params
+{
+/*	class CuratorModeratorRights
+	{
+		title = "Moderator Rights";
+		values[] = {-1,0,1,2};
+		texts[] = {
+			"Cannot create and edit anything (spectating only)", //--- ToDo: Localize
+			"Cannot create objects (only editing)",
+			"Can create all objects",
+			"Can create modules only"
+		};
+		default = 1;
+	};*/
+
+	class PlayerEditingAreaSize
+	{
+		title = "Editing Area";
+		values[] = {0,100,200,500,1000};
+		texts[] = {0,100,200,500,1000};
+		default = 0;
+	};
+	
+	class GuerFriendly
+	{
+	title = "Guerrilla Friendly";
+	values[] = {-1,1,0,2};
+	texts[] = {
+		"No one",
+		"WEST",
+		"EAST",
+		"Everyone"
+	};
+	default = 0;
+	function = "BIS_fnc_paramGuerFriendly";
+	};
+//	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+//	#include "\a3\functions_f\Params\paramDebugConsole.hpp"
+};
